@@ -44,6 +44,28 @@ public class RemoventhNodeFromEnd {
         return head;
     }
 
+    public static Node NthNodeOptimal(Node head,int n){
+        Node slow = head;
+        Node fast = head;
+
+        for(int i = 0; i<n;i++){
+            fast = fast.next;
+
+        }
+
+    
+        if(fast == null) return head.next;
+        while (fast.next!=null) {
+            slow = slow.next;
+            fast = fast.next;
+
+        }
+        Node delNode = slow.next;
+        slow.next = slow.next.next;
+        delNode = null;
+        return head;
+    }
+
     //best
     public static Node RemoventhNode(Node head, int n){
         int count = 0;
@@ -84,6 +106,7 @@ public class RemoventhNodeFromEnd {
         list.head.next.next.next.next = new Node(5);
         list.print(list.head);
         int n = 2;
+        System.out.println("Nth node: "+list.NthNodeOptimal(list.head, n));
         list.head = RemoventhNode(list.head, n);
         list.print(list.head);
         list.head = RemoventhNodeOptimal(list.head,n);
