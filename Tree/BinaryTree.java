@@ -7,8 +7,8 @@ public class BinaryTree {
 
     Node(int data){
         this.data = data;
-        this.Left = Left;
-        this.right = right;
+        this.Left = null;
+        this.right = null;
     }
 
     }
