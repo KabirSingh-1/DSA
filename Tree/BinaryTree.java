@@ -48,6 +48,13 @@ public class BinaryTree {
         Inorder( root.right);
     }
 
+    public static void Postorder(Node root){
+         if(root == null) return;
+         Postorder(root.Left);
+         Postorder(root.right);
+         System.out.print(root.data+" ");
+    }
+
   
 
     public static void main(String[] args) {
@@ -55,9 +62,13 @@ public class BinaryTree {
         InnerBinaryTree tree = new InnerBinaryTree();
         Node root = tree.buildTree(nodes);
         System.out.println(root.data);
-        Preorder(root);
         System.out.println();
+        Preorder(root);
+        System.out.println("Preorder");
         Inorder(root);
+        System.out.println("Inorder");
+        Postorder(root);
+        System.out.println("Postorder");
     }
 
 }
