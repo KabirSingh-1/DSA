@@ -39,6 +39,15 @@ public class BinaryTree {
         Preorder(root.right);
     }
 
+    public static void Inorder(Node root){
+        if(root == null){
+            return;
+        }
+        Inorder(root.Left);
+        System.out.print(root.data+" ");
+        Inorder( root.right);
+    }
+
   
 
     public static void main(String[] args) {
@@ -47,6 +56,8 @@ public class BinaryTree {
         Node root = tree.buildTree(nodes);
         System.out.println(root.data);
         Preorder(root);
+        System.out.println();
+        Inorder(root);
     }
 
 }
