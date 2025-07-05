@@ -102,6 +102,8 @@ public class BinaryTree {
         System.out.println("Inorder");
         Postorder(root);
         System.out.println("Postorder");
+        System.out.println();
+        LevelOrder(root);
     }
 
 }
