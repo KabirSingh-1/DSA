@@ -12,7 +12,7 @@ public class SubtreeofAnotherTree {
     }
 
     public static class BinaryTree{
-        static int idx = -1;
+        static int idx;
         public Node buillNode(int nodes[]){
             idx++;
             if(nodes[idx] == -1)return null;
@@ -21,14 +21,45 @@ public class SubtreeofAnotherTree {
             newNode.right = buillNode(nodes);
             return newNode;
         }
+    
+
     }
 
+    public static boolean isIdentity(Node root,Node Subroot){
+      if(root == null && Subroot == null)return true;
+      if(root == null || Subroot == null) return false;
+      if(root.data !=Subroot.data) return false;
+      return isIdentity(root.Left, Subroot.Left) && isIdentity(root.right, Subroot.right);
+    }
+
+    public static boolean isSubtree(Node root ,Node Subroot){
+        if(Subroot == null)return true;
+        if(root == null) return false;
+        if(root.data == Subroot.data){
+            if(isIdentity(root, Subroot)){
+                return true;
+            }
+
+        }
+
+        return isIdentity(root.Left, Subroot) || isIdentity(root.right, Subroot);
+
+    }
+
+    
     public static void main(String[] args) {
 
         int nodes[] = {3,4,1,-1,-1,2,-1,-1,5,-1,-1};
+        int node[] = {4,1,-1,-1,2,-1,-1};
         BinaryTree tree = new BinaryTree();
+        BinaryTree.idx =-1;
         Node root = tree.buillNode(nodes);
-        System.out.println(root.data);
+        System.out.println("root of root: "+root.data);
+        BinaryTree.idx=-1;
+        Node Subroot = tree.buillNode(node);
+        System.out.println("root of Subroot: "+Subroot.data);
+
+        System.out.println(isSubtree(root,Subroot));
 
         
     }
