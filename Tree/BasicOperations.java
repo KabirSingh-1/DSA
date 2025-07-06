@@ -24,14 +24,14 @@ public class BasicOperations {
         }
 
     }
-
+  // count the number of nodes in a tree
     public static int Count(Node root){
        if(root == null)return 0;
        int leftCount = Count(root.left);
        int rightCount = Count(root.right);
        return leftCount+rightCount+1;
     }
-
+   // find out the sum of the nodes of binary tree
     public static int sumOfNodes(Node root){
         if(root == null){
             return 0;
@@ -40,7 +40,7 @@ public class BasicOperations {
         int rightSum = sumOfNodes(root.right);
         return leftSum+rightSum+root.data;
     }
-
+     // find out the heigth of the tree
     public static int height(Node root){
         if(root == null)return 0;
         int leftHeight = height(root.left);
@@ -58,7 +58,7 @@ public class BasicOperations {
         int d3 = height(root.left)+height(root.right)+1;
         return Math.max(d3,Math.max(d1, d2));
     }
-    // O(n)- optimal 
+    // O(n)- optimal (find out the diameter of the tree)
     static class TreeInfo{
         int ht;
         int diam;
@@ -83,6 +83,8 @@ public class BasicOperations {
 
     }
 
+
+    // check the tree is balance binary tree or not 
     public static boolean balanceBinaryTree(Node root){
        return height(root)!=-1;
     }
