@@ -45,6 +45,8 @@ public class CountNode {
         if(root == null)return 0;
         int leftHeight = height(root.left);
         int rightHeight = height(root.right);
+        if(leftHeight == -1 || rightHeight ==-1)return -1;
+        if(Math.abs(leftHeight -rightHeight)>1)return -1;
         int MyHeight = Math.max(leftHeight, rightHeight)+1;
         return MyHeight;
     }
@@ -80,6 +82,10 @@ public class CountNode {
 
 
     }
+
+    public static boolean balanceBinaryTree(Node root){
+       return height(root)!=-1;
+    }
     public static void main(String[] args) {
         int nodes[] = {1,2,4,-1,-1,5,-1,-1,3,-1,6,-1,-1};
         BinaryTree tree = new BinaryTree();
@@ -91,6 +97,8 @@ public class CountNode {
         System.out.println("diameter of root: "+diameter(root));
 
         System.out.println("diameter by otpimat approach: "+diameter1(root).diam);
+
+        System.out.println("is balance binary tree : "+balanceBinaryTree(root));
 
     }
 }
