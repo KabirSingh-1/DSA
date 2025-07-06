@@ -1,4 +1,4 @@
-public class CountNode {
+public class BasicOperations {
     static class Node{
         int data;
         Node left;
