@@ -42,7 +42,7 @@ public class SubtreeofAnotherTree {
 
         }
 
-        return isIdentity(root.Left, Subroot) || isIdentity(root.right, Subroot);
+        return isSubtree(root.Left, Subroot) || isSubtree(root.right, Subroot);
 
     }
 
