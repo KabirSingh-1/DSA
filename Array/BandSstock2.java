@@ -25,8 +25,6 @@ if (prices == null || prices.length <= 1) {
         //logic 2
     
         int max_profit = 0;
-
-
         for(int i = 1; i<prices.length;i++){
             if(prices[i-1]<prices[i]){
                 max_profit+=(prices[i]-prices[i-1]);
