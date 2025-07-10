@@ -1,3 +1,5 @@
+import javax.swing.tree.TreeNode;
+
 public class SubtreeofAnotherTree {
     static class Node {
         int data;
@@ -46,6 +48,13 @@ public class SubtreeofAnotherTree {
 
     }
 
+    public static boolean isSameTree(Node p, Node q) {
+        if (p == null && q == null) return true;
+        if (p == null || q == null) return false;
+        if (p.data != q.data) return false;
+        return isSameTree(p.Left, q.Left) && isSameTree(p.right, q.right);
+    }
+
     
     public static void main(String[] args) {
 
@@ -60,6 +69,8 @@ public class SubtreeofAnotherTree {
         System.out.println("root of Subroot: "+Subroot.data);
 
         System.out.println(isSubtree(root,Subroot));
+
+        System.out.println(isSameTree(root,Subroot));
 
         
     }

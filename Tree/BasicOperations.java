@@ -75,7 +75,7 @@ public class BasicOperations {
          int d1 = left.diam;
          int d2 =  right.diam;
          int d3 = left.ht+right.ht+1;
-         int mydiam = Math.max(d3,Math.max(d2,d3));
+         int mydiam = Math.max(d3,Math.max(d2,d1));
         
          TreeInfo myInfo = new TreeInfo(maxHeight, mydiam);
          return myInfo;
