@@ -88,6 +88,35 @@ public class BasicOperations {
     public static boolean balanceBinaryTree(Node root){
        return height(root)!=-1;
     }
+
+    static class basicInfo{
+        int diam;
+        int height;
+        int count;
+        int sumOfNodes;
+
+        basicInfo(int diam, int height, int count, int sumOfNodes){
+            this.diam = diam;
+            this.height = height;
+            this.count = count;
+            this.sumOfNodes = sumOfNodes;
+        }
+    }
+
+    public static basicInfo build(Node root){
+        if(root == null) return new basic(0, 0, 0, 0);
+        basicInfo left = build(root.left);
+        basicInfo right = build(root.right);
+        int maxHeight = Math.max(left.height,right.height)+1; 
+        int d1 = left.diam;
+        int d2 = right.diam;
+        int d3 = left.height+right.height+1;
+        int mydiam = Math.max(d3,Math.max(d1,d2));
+        int myCount = left.count+right.count+1;
+        int mySumofNodes = left.count+right.count+root.data;
+        basicInfo myInfo = new basicInfo(mydiam, maxHeight, myCount, mySumofNodes);
+        return myInfo;
+    }
     public static void main(String[] args) {
         int nodes[] = {1,2,4,-1,-1,5,-1,-1,3,-1,6,-1,-1};
         BinaryTree tree = new BinaryTree();
@@ -101,6 +130,8 @@ public class BasicOperations {
         System.out.println("diameter by otpimat approach: "+diameter1(root).diam);
 
         System.out.println("is balance binary tree : "+balanceBinaryTree(root));
+
+        System.out.println(build(root).count);
 
     }
 }

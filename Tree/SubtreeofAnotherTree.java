@@ -47,7 +47,7 @@ public class SubtreeofAnotherTree {
         return isSubtree(root.Left, Subroot) || isSubtree(root.right, Subroot);
 
     }
-
+    // same(identical) are same things 
     public static boolean isSameTree(Node p, Node q) {
         if (p == null && q == null) return true;
         if (p == null || q == null) return false;
