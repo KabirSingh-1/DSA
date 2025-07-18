@@ -1,5 +1,5 @@
 package Must_Practice;
-public class logic {
+public class PrimLogic {
         public static boolean prim(int num){
         boolean prime  = true;
             if(num <=1) return false;
