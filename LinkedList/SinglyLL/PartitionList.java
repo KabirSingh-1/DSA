@@ -56,6 +56,30 @@ public class PartitionList {
        less.next = eqaulhead.next;
        return lesshead.next;
     }
+
+    // leetcode - 86
+    static Node partitionList(Node head, int x) {
+       Node lesshead = new Node(0);
+       Node eqaulhead = new Node(0);
+       Node less = lesshead;
+       Node equal = eqaulhead;
+
+       while(head!=null){
+        if(head.data<x){
+            less.next = head;
+            less = less.next;
+        }
+        else{
+            equal.next = head;
+            equal = equal.next;
+        }
+        head = head.next;
+       }
+
+       equal.next = null;
+       less.next = eqaulhead.next;
+       return lesshead.next;
+    }
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
@@ -64,12 +88,16 @@ public class PartitionList {
             nums[i] = sc.nextInt();
         }
         int pivot = sc.nextInt();
+        int arr[] = nums.clone();
         Node head = buildList(nums);
         print(head);
         System.out.println();
         Node result  = partition(head, pivot);
         print(result);
-        
+        System.out.println();
+        Node Head = buildList(arr);
+        Node result1 = partitionList(Head, pivot);
+        print(result1);
         
     }
 }
