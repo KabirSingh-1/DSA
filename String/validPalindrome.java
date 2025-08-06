@@ -18,10 +18,8 @@ public class validPalindrome {
            gtr.reverse();
 
            System.out.println(gtr.toString());
-
-           String rstr = gtr.toString();
-
-           if(str.equals(rstr)){
+           
+           if(str.equals(gtr.toString())){
             System.out.println("ture");
            }else System.out.println("false");
         
