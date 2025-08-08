@@ -1,5 +1,7 @@
 package SinglyLL;
 
+import java.util.Scanner;
+
 class Node{
     int data;
     Node next;
@@ -11,7 +13,7 @@ class Node{
 public class ReverseLL {
     Node head;
 
-    public void print(Node head){
+    public static void print(Node head){
         Node temp = head;
         while(temp!=null){
             System.out.print(temp.data+"->");
@@ -20,7 +22,7 @@ public class ReverseLL {
         System.out.println("null");
     }
 
-    public Node reverseLL(Node head){
+    public static Node reverseLL(Node head){
         Node prev = null;
         Node temp = head;
 
@@ -32,15 +34,27 @@ public class ReverseLL {
         }
         return prev;
     }
-
+   public static Node buildList(int nums[]){
+     Node dummy = new Node(0);
+     Node temp = dummy;
+     for(int num : nums){
+        temp.next = new Node(num);
+        temp = temp.next;
+     }
+     return dummy.next;
+   }
     public static void main(String[] args) {
-        ReverseLL list = new ReverseLL();
-        list.head = new Node(1);
-        list.head.next = new Node(2);
-        list.head.next.next = new Node(3);
-        list.head.next.next.next = new Node(4);
-        list.print(list.head);
-        list.head = list.reverseLL(list.head);
-        list.print(list.head);
+        Scanner sc = new Scanner(System.in);
+        System.out.println("enter the number of elements");
+        int n = sc.nextInt();
+        int nums[] = new int[n];
+        System.out.println("enter the elements");
+        for(int i=0;i<n;i++){
+            nums[i] = sc.nextInt();
+            }
+        Node head = buildList(nums);
+        print(head);
+        head = reverseLL(head);
+        print(head);
     }
 }
