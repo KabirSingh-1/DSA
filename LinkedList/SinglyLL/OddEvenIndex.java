@@ -1,5 +1,8 @@
 package SinglyLL;
 
+import java.nio.channels.Pipe.SourceChannel;
+import java.util.Scanner;
+
 public class OddEvenIndex {
     static class Node{
         int data;
@@ -48,7 +51,14 @@ public class OddEvenIndex {
         return oddHead.next;
     }
     public static void main(String[] args) {
-        int nums[] = {1,2,3,4,5};
+        Scanner sc = new Scanner(System.in);
+        System.out.println("enter the number of nodes");
+        int n = sc.nextInt();
+        int nums[] = new int[n];
+        System.out.println("enter the elements of the list");
+        for(int i=0;i<n;i++){
+            nums[i] = sc.nextInt();
+        }
         Node head = buildList(nums);
         System.out.println("Original List:");
         print(head);
