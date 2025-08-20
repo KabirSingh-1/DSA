@@ -11,10 +11,8 @@ public class CaseConversion {
             }
             else if(Character.isLowerCase(c)){
                 gtr.append(str.toUpperCase());
-            }else{
-
-            gtr.append(c);
-            }
+            }else gtr.append(c);
+            
         }
     }
 }
