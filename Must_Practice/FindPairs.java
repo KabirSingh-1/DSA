@@ -3,6 +3,7 @@ package Must_Practice;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
+import java.util.Scanner;
 
 public class FindPairs {
     public static List<int[]> Pair(int nums[], int target){
@@ -19,10 +20,12 @@ public class FindPairs {
     }
     public static void main(String[] args) {
         int nums[] = {2, 4, 3, 5, 6, -2, 8, 7, 1};
-        int target = 6;
+        Scanner sc = new Scanner(System.in);
+        int target = sc.nextInt();
         List<int[]> pair = Pair(nums, target);
         for(int[] arr : pair){
             System.out.println("{"+arr[0]+","+arr[1]+"}");
         }
+        sc.close();
     }
 }
