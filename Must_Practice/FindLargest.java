@@ -1,5 +1,7 @@
 package Must_Practice;
 
+import java.util.Scanner;
+
 public class FindLargest {
     public static int Largest(int nums[]){
         int max = Integer.MIN_VALUE;
@@ -11,7 +13,10 @@ public class FindLargest {
         return max;
     }
     public static void main(String[] args) {
-        int nums[] = {2,3,9,6,5,7,1};
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int nums[] = new int[n];
         System.out.println(Largest(nums));
+        sc.close();
     }
 }
