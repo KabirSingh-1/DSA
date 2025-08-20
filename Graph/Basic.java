@@ -32,6 +32,7 @@ public class Basic {
             graph[dest].add(new Edge(dest, src, weight));
         
         }
+        sc.close();
     }
 
     public static void print(ArrayList<Edge>[] graph) {
