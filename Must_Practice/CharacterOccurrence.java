@@ -14,6 +14,7 @@ public class CharacterOccurrence {
         }
 
         System.out.println(count);
+        sc.close();
 
     }
 }
