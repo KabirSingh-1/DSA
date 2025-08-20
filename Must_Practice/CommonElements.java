@@ -15,6 +15,7 @@ public class CommonElements {
         }
         return commonSet.toArray(new Integer[0]);
     }
+    
     public static void main(String[] args) {
         Integer nums1[] = {1,2,3,4,5,6,7};
         Integer nums2[] = {4,5,6};
