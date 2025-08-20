@@ -1,8 +1,11 @@
 package Must_Practice;
 
+import java.util.Scanner;
+
 public class Fibonacci {
     public static void main(String[] args) {
-        int n = 10;
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt() ;
         int a = 0;
         int b = 1;
         System.out.println("Fabonacci...: ");
@@ -12,5 +15,6 @@ public class Fibonacci {
             a = b;
             b = c;
         }
+        sc.close();
     }
 }
