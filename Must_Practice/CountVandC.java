@@ -19,5 +19,6 @@ public class CountVandC {
        } 
 
        System.out.println("Vowels: "+vowels+", Consonants: "+consonants);
+       sc.close();
     }
 }
