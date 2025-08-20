@@ -17,6 +17,7 @@ public class FindDuplicates {
       return list;
     }
     public static void main(String[] args) {
+      // Array with duplicate elements 
         int[] nums = {1, 2, 3, 4, 5,5,6,4,3,2,8,9};
         System.out.println(Duplicates(nums));
     }
