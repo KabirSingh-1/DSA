@@ -1,53 +1,64 @@
-
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class Basic {
-    public static class Edge{
+    public static class Edge {
         int src;
         int dest;
         int weight;
 
-        public Edge(int src , int dest,int weight){
+        public Edge(int src, int dest, int weight) {
             this.src = src;
             this.dest = dest;
             this.weight = weight;
         }
     }
 
-    public static void createGraph(ArrayList<Edge> graph[]){
-        for(int i = 0; i<graph.length; i++){
-            graph[i] = new ArrayList<Edge>();
+    public static void createGraph(ArrayList<Edge>[] graph, int edges) {
+        Scanner sc = new Scanner(System.in);
+
+      
+        for (int i = 0; i < graph.length; i++) {
+            graph[i] = new ArrayList<>();
         }
 
-        graph[0].add(new Edge(0, 2,2));
+        for (int i = 0; i < edges; i++) {
+            System.out.print("Enter src, dest, weight: ");
+            int src = sc.nextInt();
+            int dest = sc.nextInt();
+            int weight = sc.nextInt();
 
-        graph[1].add(new Edge(1, 2,10));
-        graph[1].add(new Edge(1, 3,0));
-
-        graph[2].add(new Edge(2, 0,2));
-        graph[2].add(new Edge(2, 1,10));
-        graph[2].add(new Edge(2, 3,-1)); 
-
-        graph[3].add(new Edge(3, 1,0));
-        graph[3].add(new Edge(3, 2,-1));
-
+            graph[src].add(new Edge(src, dest, weight));
+            graph[dest].add(new Edge(dest, src, weight));
+        
+        }
     }
 
-    public static  void print(ArrayList<Edge> graph[],int V ){
-        for(int i = 0; i<graph[2].size();i++){
-            Edge e = graph[2].get(i);
-            System.out.print("dest: "+e.dest+" weight: "+e.weight+" ");
+    public static void print(ArrayList<Edge>[] graph) {
+        for (int i = 0; i < graph.length; i++) {
+            System.out.print("Vertex " + i + " ->");
+            for (Edge e : graph[i]) {
+                System.out.print("(dest: " + e.dest + ", weight: " + e.weight + ") ");
+            }
+            System.out.println();
         }
     }
 
     public static void main(String[] args) {
-        int V = 4;
-        ArrayList<Edge> graph[] = new ArrayList[V];
-        createGraph(graph);
-         
-        print(graph, V);
+        Scanner sc = new Scanner(System.in);
 
-       
+        System.out.print("Enter number of vertices: ");
+        int V = sc.nextInt();
 
+        System.out.print("Enter number of edges: ");
+        int E = sc.nextInt();
+
+        ArrayList<Edge>[] graph = new ArrayList[V];
+        createGraph(graph, E);
+
+        System.out.println("Graph Adjacency List:");
+        print(graph);
+
+        sc.close();
     }
 }
