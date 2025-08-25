@@ -18,6 +18,7 @@ public class StringLength {
             System.out.println(e);
         }
        System.out.println(length);
+       sc.close();
        
     }
 }
