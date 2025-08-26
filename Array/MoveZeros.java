@@ -7,13 +7,12 @@ public class MoveZeros {
         for(int j = 1; j<nums.length; j++){
             if(nums[j]!=0){
                 
-                //(using xor)
+                //(using xor concept )
                 // if(i!=j){
                 //     nums[j] = nums[j]^nums[i];
                 //     nums[i] = nums[j]^nums[i];
                 //     nums[j] = nums[j]^nums[i];
                 // }
-
                 //(using temp variable)
                 int temp = nums[i];
                 nums[i] = nums[j];
