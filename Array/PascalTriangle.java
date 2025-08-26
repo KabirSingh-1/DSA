@@ -3,9 +3,8 @@ import java.util.List;
 
 public class PascalTriangle {
 
-
     public static void main(String[] args) {
-        int numROw = 5;
+       int numROw = 5;
        List<List<Integer>> result =  pascalTriangle(numROw);
        for(List<Integer> list : result){
         System.out.println(list);
