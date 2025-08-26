@@ -67,5 +67,6 @@ public class Partition {
        }
        System.out.println();
        pivotArray(arr, pivot);
+       sc.close();
     }
 }
