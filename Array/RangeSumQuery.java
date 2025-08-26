@@ -25,7 +25,9 @@ public class RangeSumQuery {
         
         // Call sumRange on different ranges and print results
         System.out.println("sumRange(0, 2): " + obj.sumRange(0, 2)); // Output: 1
+
         System.out.println("sumRange(2, 5): " + obj.sumRange(2, 5)); // Output: -1
+        
         System.out.println("sumRange(0, 5): " + obj.sumRange(0, 5)); // Output: -3
     }
 }
