@@ -9,6 +9,7 @@ public class PascalTriangle {
        for(List<Integer> list : result){
         System.out.println(list);
        }
+       // last row of pascal triangle
        System.out.println(result.get(numROw-1));
     }
     public static List<List<Integer>> pascalTriangle(int numROw){
