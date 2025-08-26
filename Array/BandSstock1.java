@@ -10,8 +10,7 @@ public class BandSstock1 {
         int profit = 0;
         for(int i = 1; i<prices.length;i++){
           buy = Math.min(prices[i], buy);
-          profit = Math.max(prices[i]-buy, profit);
-            
+          profit = Math.max(prices[i]-buy, profit);  
         }
         System.out.println(profit);
     }

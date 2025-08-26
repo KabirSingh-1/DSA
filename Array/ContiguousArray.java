@@ -30,6 +30,7 @@ public class ContiguousArray {
          
         int results = findLength(nums);
         System.out.println("MaxLength: "+results);
+        sc.close();
         
     }
 }
