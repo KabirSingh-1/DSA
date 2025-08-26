@@ -27,7 +27,9 @@ public class MergeIntervals {
     }
     public static void main(String[] args) {
         int [][] intervals = {{1,3},{2,6},{8,10},{15,18}};
+        
         int[][] result = merge(intervals);
+
         for(int[] arr: result){
             for(int num: arr){
                 System.out.print("{"+num+"}");
