@@ -47,5 +47,6 @@ public class MajorityElement {
         }
         System.out.println("Majority element: "+ByHashmap(nums, majority, n));
         System.out.println("by count by every: "+byCountEvery(nums, majority, n));
+        sc.close();
     }
 }
