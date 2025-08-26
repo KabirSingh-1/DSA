@@ -30,6 +30,7 @@ public class ProductofArrayExceptSelf {
         for(int i = 0; i<n; i++){
             System.out.print(answer[i]+" ");
         }
+        sc.close();
     }
 }
 
