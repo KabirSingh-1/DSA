@@ -25,9 +25,10 @@ public class ReverseBits {
     }
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
+        System.out.print("enter number : ");
         int n = sc.nextInt();
-        System.out.println(approach1(n));
-        System.out.println(approach2(n));
+        System.out.println("approach one: "+approach1(n));
+        System.out.println("approach two: "+approach2(n));
         sc.close();
     }
 }
