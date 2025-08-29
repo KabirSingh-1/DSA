@@ -18,7 +18,7 @@ public class SumofTwoIntegers {
         Scanner sc =  new Scanner(System.in);
         int a = sc.nextInt();
         int b = sc.nextInt();
-        System.out.println(sumofTwoInteger(a, b));
+        System.out.println("sum of two integers without using +: "+sumofTwoInteger(a, b));
 
         sc.close();
 
