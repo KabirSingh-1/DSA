@@ -12,7 +12,7 @@ public class FirstMissingPositive {
         return result;
     }
     public static void main(String[] args) {
-        int nums[] = {7,8,9,11,12};
+        int nums[] = {7,8,9,11,12 ,-1};
         System.out.println(MissingPositive(nums));
     }
 }
