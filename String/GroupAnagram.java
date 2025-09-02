@@ -13,12 +13,12 @@ public class GroupAnagram {
     //  for(String s : strs){
     //     char[] ch = s.toCharArray();
     //     Arrays.sort(ch);
-    //     String sorted = new String(ch);
+    //     String key = new String(ch);
 
-    //     if(!map.containsKey(sorted)){
-    //         map.put(sorted, new ArrayList<>());
+    //     if(!map.containsKey(key)){
+    //         map.put(key, new ArrayList<>());
     //     }
-    //     map.get(sorted).add(s);
+    //     map.get(key).add(s);
     //  }
 
     for(String s : strs){
