@@ -20,5 +20,6 @@ public class ValidAnagram{
        String s = sc.nextLine();
        String t = sc.nextLine();
        System.out.println(anagram(s,t));
+       sc.close();
     }
 }
