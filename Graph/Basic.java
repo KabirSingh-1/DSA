@@ -63,7 +63,7 @@ public class Basic {
         // neighbour of 2
         for(int i = 0; i<graph[2].size(); i++){
             Edge e = graph[2].get(i);
-            System.out.print(e.dest+" ");
+            System.out.print(e.dest+" , "+e.weight);
         }
 
         sc.close();

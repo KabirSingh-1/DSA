@@ -77,6 +77,7 @@ public class BFS {
         System.out.println();
         bfs(graph, V);
         System.out.println();
+        sc.close();
         
     }
 }
