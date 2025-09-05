@@ -83,6 +83,7 @@ public class DisConnectedBfs{
         }
         
         System.out.println();
+        sc.close();
         
     }
 }
