@@ -1,4 +1,5 @@
 
+import java.nio.channels.Pipe.SourceChannel;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.Queue;
@@ -71,10 +72,10 @@ public class BFS {
         }
     }
 
-    public static void bfs(ArrayList<Edge> graph[], int V){
+    public static void bfs(ArrayList<Edge> graph[], int V, int src){
         Queue<Integer> q = new LinkedList<>();
         boolean visit[] = new boolean[V];
-        q.add(0);
+        q.add(src);
 
         while(!q.isEmpty()){
             int curr = q.remove();
@@ -96,11 +97,13 @@ public class BFS {
         int V = sc.nextInt();
         System.out.print("enter the number of edges");
         int edges = sc.nextInt();
+        System.out.print("enter the source of graph: ");
+        int src = sc.nextInt();
         ArrayList<Edge> graph[] = new ArrayList[V];
         createGraph(graph, edges);
         printNeighbour(graph);
         System.out.println();
-        bfs(graph, V);
+        bfs(graph, V,src);
         System.out.println();
         print(graph);
         sc.close();
