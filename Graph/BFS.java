@@ -70,10 +70,10 @@ public class BFS {
         }
     }
 
-    public static void bfs(ArrayList<Edge> graph[], int V, int src){
+    public static void bfs(ArrayList<Edge> graph[], int V, int start){
         Queue<Integer> q = new LinkedList<>();
         boolean visit[] = new boolean[V];
-        q.add(src);
+        q.add(start);
 
         while(!q.isEmpty()){
             int curr = q.remove();
